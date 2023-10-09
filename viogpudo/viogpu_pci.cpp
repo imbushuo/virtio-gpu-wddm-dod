@@ -115,10 +115,13 @@ ULONGLONG mem_get_physical_address(void *context, void *virt)
 void *mem_alloc_nonpaged_block(void *context, size_t size)
 {
     UNREFERENCED_PARAMETER(context);
+#pragma warning (push)
+#pragma warning (disable:4996)
     PVOID ptr = ExAllocatePoolWithTag(
         NonPagedPool,
         size,
         VIOGPUTAG);
+#pragma warning (pop)
     if (ptr) {
         RtlZeroMemory(ptr, size);
     } else {

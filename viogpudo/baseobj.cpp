@@ -12,7 +12,10 @@ void* __cdecl operator new(size_t Size, POOL_TYPE PoolType)
 
     Size = (Size != 0) ? Size : 1;
     
+#pragma warning (push)
+#pragma warning (disable:4996)
     void* pObject = ExAllocatePoolWithTag(PoolType, Size, VIOGPUTAG);
+#pragma warning (pop)
 
     if (pObject != NULL)
     {
@@ -34,7 +37,10 @@ void* __cdecl operator new[](size_t Size, POOL_TYPE PoolType)
 
     Size = (Size != 0) ? Size : 1;
     
+#pragma warning (push)
+#pragma warning (disable:4996)
     void* pObject = ExAllocatePoolWithTag(PoolType, Size, VIOGPUTAG);
+#pragma warning (pop)
 
     if (pObject != NULL)
     {
