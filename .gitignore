@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+.vs
+objchk_win10_arm64
+objfre_win10_arm64
+objchk_win10_amd64
+objfre_win10_amd64
+objchk_win10_x86
+objfre_win10_x86
+VirtIO/ARM64
+viogpudo/ARM64
